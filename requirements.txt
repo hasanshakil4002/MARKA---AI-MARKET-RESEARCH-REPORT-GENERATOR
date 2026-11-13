@@ -5,3 +5,17 @@ python-multipart
 markdown-it-py
 crewai
 crewai-tools
+crewai
+crewai-tools
+litellm
+
+fastapi
+uvicorn[standard]
+
+python-dotenv
+pydantic
+requests
+
+beautifulsoup4
+lxml
+markdown
