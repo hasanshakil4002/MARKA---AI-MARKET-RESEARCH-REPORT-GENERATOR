@@ -1,0 +1,83 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌍  AI MARKET RESEARCH REPORT GENERATOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ One product. One country. One click. One report.
+
+
+🎯 THE PROBLEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Launching a product in a new country is risky.
+Businesses need to know demand, competitors, pricing and entry
+risks, but manual research takes days and agencies charge
+thousands.
+
+💡 THE SOLUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A clean web tool where the user:
+
+  1️⃣  Enters a Product Name, Region and Country
+  2️⃣  Presses "Generate Report"
+  3️⃣  Reads an AI-written research report right on the page
+  4️⃣  Downloads it as report.md to share, edit or archive
+
+
+👥 WHO NEEDS THIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📦 Exporters and importers checking a new country
+🛒 E-commerce and Amazon sellers comparing markets
+🚀 Startups without a research budget
+📊 Consultants and agencies who want faster first drafts
+
+
+💼 WHY IT MATTERS TO A BUSINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✔ Faster first-pass market research, in minutes instead of days
+✔ Helps teams decide which markets deserve a deeper look
+✔ A repeatable tool anyone on the team can use
+✔ A downloadable report that is easy to share with partners
+
+
+🛠️ WHAT I BUILT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🐍 Backend: Python + FastAPI
+🎨 Frontend: hand-written HTML + CSS, modern and mobile-friendly
+🚫 No JavaScript: server-rendered, so it is simple, fast and
+   easy to maintain
+🔒 Safe output: raw HTML inside AI reports is blocked, so the
+   output can't inject markup
+🔌 Plug-in AI: one clearly marked function connects the AI
+   assistant, so the engine can be upgraded or swapped later
+
+
+🧠 SKILLS DEMONSTRATED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Python  •  FastAPI  •  Jinja2  •  HTML5  •  CSS3
+Responsive Design  •  AI / LLM Integration
+Form Handling and Validation  •  File Download Endpoints
+Clean Project Structure  •  UI / UX Design
+
+
+🏔️ PROJECT DIFFICULTY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Backend API design + AI integration + secure rendering + a
+custom-designed UI, all without a JavaScript framework. Keeping
+the stack this lean was a deliberate choice for reliability and
+low maintenance.
+
+
+📩 NEED SOMETHING SIMILAR?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+I build AI-powered web tools with FastAPI: report generators,
+research assistants, dashboards and internal business tools.
+
+👉 Message me with your idea. I will suggest the simplest
+   reliable way to build it.
+✨ Short decorated version (portfolio summary box)
+🌍 AI Market Research Report Generator
+Enter a product + country → click → get a full research report 📄
+
+🐍 Python  ⚡ FastAPI  🎨 HTML/CSS  🚫 No JavaScript  🤖 AI-powered
+
+✔ Report shown on the page + downloadable as .md
+✔ Safe, fast, server-rendered and easy to maintain
+✔ Perfect for exporters, e-commerce sellers and startups

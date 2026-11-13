@@ -1,0 +1,68 @@
+market_research_task:
+  description: >
+    Analyze the market for {product} at three levels: global, {region}, and {country}.
+    Cover: market size (USD, year), 5-year growth/CAGR, segmentation (type, application,
+    price tier, channel), key drivers and restraints, and value chain.
+    Cite source and year for every number. Show ranges if estimates conflict.
+    State clearly if data is unavailable.
+  expected_output: >
+    Markdown report with the sections above, a key-numbers table
+    (metric | level | value | year | source), and a source list.
+  agent: market_researcher
+
+country_research_task:
+  description: >
+    Research {country} as a market for {product}, and compare it with other main
+    countries in {region}. Cover: market size and growth, imports/exports, tariffs and
+    duties, regulations and certifications, local players, and entry barriers.
+    Give an entry-attractiveness rating for {country} with reasoning.
+    Cite source and year for every number.
+  expected_output: >
+    Markdown report with a {region} country comparison table
+    (country | size | growth | tariffs | regulations | entry difficulty),
+    a {country} deep-dive, and a source list.
+  agent: country_researcher
+
+competitor_research_task:
+  description: >
+    Identify the top 10 competitors for {product} (global leaders plus leaders in
+    {region} and {country}). For each give: HQ, products, price range, channels,
+    market share (if available), strengths, weaknesses, and recent strategic moves.
+    Also assess market concentration and whitespace opportunities in {country}.
+    Cite source and year.
+  expected_output: >
+    Markdown report with a competitor table
+    (company | HQ | products | price | channels | share | strengths | weaknesses),
+    profiles of the top 5, a whitespace section, and a source list.
+  agent: competitor_researcher
+
+consumer_trend_research_task:
+  description: >
+    Research consumers and trends for {product} in {country} and {region}. Cover:
+    customer segments, buying criteria, preferred channels, regional/local differences,
+    and 5-8 emerging trends with expected impact over 3-5 years.
+    Separate proven trends from speculation. Cite source and year.
+  expected_output: >
+    Markdown report with a segment table, buying drivers, local preference notes,
+    a trend table (trend | evidence | impact | timeframe), and a source list.
+  agent: consumer_trend_researcher
+
+final_analysis_task:
+  description: >
+    Write the final market analysis report for {product} focused on {country} ({region}),
+    using only the research provided. Cross-check findings and flag inconsistencies and
+    data gaps. Sections: 1) Executive summary (max 10 lines), 2) Market overview
+    (global, {region}, {country}), 3) Country/regional analysis, 4) Competitive landscape,
+    5) Consumer insights and trends, 6) Opportunities and risks, 7) Strategic
+    recommendations (short and long term), 8) Data gaps and next steps.
+  expected_output: >
+    A polished markdown report titled "Market Analysis: {product} - {country}, {region}
+    ({current_year})" with the 8 sections, tables where helpful, and a consolidated
+    source list.
+  agent: final_analyst
+  context:
+    - market_research_task
+    - country_research_task
+    - competitor_research_task
+    - consumer_trend_research_task
+  output_file: output/final_report.md

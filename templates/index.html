@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market Research Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+
+  <main class="wrap">
+    <header class="hero">
+      <div class="globe" aria-hidden="true">🌍</div>
+      <h1>Know your market<br>before you ship.</h1>
+      <p>Enter a product and where you want to sell it. Your AI assistant researches demand, competitors, pricing and entry risks, then writes the report.</p>
+    </header>
+
+    <form class="card" method="post" action="/#report">
+      <div class="field">
+        <label for="product">Product name</label>
+        <input id="product" name="product" type="text" maxlength="100" required
+               placeholder="e.g. Organic green tea" value="{{ product or '' }}">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="region">Region</label>
+          <input id="region" name="region" type="text" maxlength="100" required
+                 placeholder="e.g. South Asia" value="{{ region or '' }}">
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <input id="country" name="country" type="text" maxlength="100" required
+                 placeholder="e.g. Bangladesh" value="{{ country or '' }}">
+        </div>
+      </div>
+      <button class="btn" type="submit">Generate report</button>
+      {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    </form>
+
+    {% if report_html %}
+    <section id="report" class="report-card">
+      <div class="report-bar">
+        <h2>Your report</h2>
+        <form method="post" action="/download">
+          <input type="hidden" name="markdown_text" value="{{ markdown_text }}">
+          <button class="btn btn-light" type="submit">Download report.md</button>
+        </form>
+      </div>
+      <article class="report">{{ report_html | safe }}</article>
+    </section>
+    {% endif %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+[project]
+name = "buisness_research_ai_assistant"
+version = "0.1.0"
+description = "Buisness_Research_AI_Assistant using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=1.15.22,<2.0.0"
+]
+
+[project.scripts]
+buisness_research_ai_assistant = "buisness_research_ai_assistant.main:run"
+run_crew = "buisness_research_ai_assistant.main:run"
+train = "buisness_research_ai_assistant.main:train"
+replay = "buisness_research_ai_assistant.main:replay"
+test = "buisness_research_ai_assistant.main:test"
+run_with_trigger = "buisness_research_ai_assistant.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+project_id = "27925713-0680-4599-9b57-9840290c6d27"
