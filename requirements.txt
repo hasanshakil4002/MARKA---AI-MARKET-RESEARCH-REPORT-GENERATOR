@@ -4,3 +4,4 @@ jinja2
 python-multipart
 markdown-it-py
 crewai
+crewai-tools
