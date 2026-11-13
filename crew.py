@@ -5,7 +5,7 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai_tools import (
     SerperDevTool,
-    ScrapeWebsiteTool,SeleniumScrapingTool
+    ScrapeWebsiteTool
 
 )
 
@@ -15,10 +15,10 @@ load_dotenv()
 import litellm
 
 search_tool = SerperDevTool()
-selenium_tool = SeleniumScrapingTool()
+
 scrape_tool = ScrapeWebsiteTool()
 
-toolkit=[search_tool,scrape_tool,selenium_tool]
+toolkit=[search_tool,scrape_tool]
 
 @CrewBase
 class MarketResearchAi():

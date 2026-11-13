@@ -1,20 +1,23 @@
 from datetime import datetime
 
-from fastapi import FastAPI, Form, Request
+from fastapi import FastAPI, Form, Request, logger
 from fastapi.responses import HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from markdown_it import MarkdownIt
 
-from crew import MarketResearchAi
+#from crew import MarketResearchAi #true position
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
-md = MarkdownIt("js-default")  # raw HTML disabled, so AI output can't inject markup
+#md = MarkdownIt("js-default") #true position
+md = MarkdownIt("default") # in rending time, we will use the default renderer instead of the js-default renderer, because the js-default renderer is not safe for untrusted input. The default renderer is safe for untrusted input, but it does not support some features like tables and footnotes.
+  # raw HTML disabled, so AI output can't inject markup
 
 
 def generate_report(product: str, region: str, country: str) -> str:
+    from crew import MarketResearchAi #in rending time, we will import the MarketResearchAi class from the crew module, because the crew module is not available at the top level of the application, and we want to avoid circular imports.
     result = MarketResearchAi().crew().kickoff(inputs={
         "product": product,
         "region": region,
@@ -40,6 +43,7 @@ def report(
     try:
         markdown_text, error = generate_report(product, region, country), None
     except Exception:
+        logger.exception("Report generation failed")
         markdown_text, error = "", "Could not generate the report. Please try again."
 
     return templates.TemplateResponse(request, "index.html", {
